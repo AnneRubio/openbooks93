@@ -1,13 +1,11 @@
 <h1>Books#index</h1>
-<ul>
-
-<% @books.each do |book| %>
-
-<li><%= book.title %></li>
-<li><%= book.author %></li>
-<li><%= book.delivery_price %></li>
-
-<% end %>
-
-</ul>
 <p>Find me in app/views/books/index.html.erb</p>
+
+<ul>
+  <% @books.each do |book| %>
+
+    <li><%= book.title %></li>
+    <li><%= book.author %></li>
+    <li><%= book.delivery_price %></li>
+  <% end %>
+</ul>
