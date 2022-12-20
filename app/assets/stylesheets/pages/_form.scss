@@ -1,0 +1,51 @@
+.h1-form {
+  font-size: 2.5rem;
+}
+
+.form-new {
+  width: 600px;
+  margin: auto;
+  margin-top: 2rem;
+  border: 1px solid #355c7d;
+  border-radius: 10px;
+  padding: 40px 60px;
+}
+
+// change form Boostrap colors
+.form-control:focus {
+  color: #0E0000;
+  background-color: #F4F4F4;
+  border-color: #c06784;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(110, 100, 150, 0.15);
+}
+
+// change color for boostrap input collection
+#book_category:focus {
+  color: #0E0000;
+  background-color: #F4F4F4;
+  border-color: #c06784;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(110, 100, 150, 0.15);
+}
+
+.img-form-new img {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.20);
+}
+
+.parent {
+  display: flex;
+  align-items: center;
+}
+
+// input:not([type="submit"]):focus,
+// textarea:focus,
+// select:focus {
+//   color: #0E0000;
+//   background-color: #F4F4F4;
+//   border-color:#c06784;
+//   box-shadow: 0 0 0 0.2rem rgb(110 100 150 / 0.15);
+// }
