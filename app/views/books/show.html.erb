@@ -1,9 +1,23 @@
-<h1>Books#show</h1>
-<p>Find me in app/views/books/show.html.erb</p>
-
-<h2><%= @book.title %></h2>
-<h2><%= @book.author %></h2>
-<h2><%= @book.category %></h2>
-<h2><%= @book.description %></h2>
-<h2><%= @book.delivery_price %></h2>
-<%= cl_image_tag @book.photo.key, height: 300, width: 400, crop: :fill%>
+<div class="container">
+  <h1>Books#show</h1>
+  <p>Find me in app/views/books/show.html.erb</p>
+  <%# la class row permet de définir 1 ligne %>
+  <div class="row">
+    <%# la class col permet de diviser la page en col %>
+    <div class="col-3">
+      <figure>
+        <%= cl_image_tag @book.photo.key, class:"w-100", crop: :fill%>
+      </figure>
+    </div>
+    <div class="col-9">
+      <h3><%= @book.title %></h3>
+      <p><%= @book.author %></p>
+      <p><%= @book.category %></p>
+      <div class="grey-bloc">
+        <p><%= @book.description %></p>
+        <p>delivery_price: <%= @book.delivery_price %>€</p>
+        <%= link_to 'Book it', new_book_path, class:"btn btn-small" %>
+      </div>
+    </div>
+  </div>
+</div>

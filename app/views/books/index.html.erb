@@ -1,16 +1,25 @@
 <div class="container">
-  <h1>Books#index</h1>
-  <p>Find me in app/views/books/index.html.erb</p>
+  <div>
+    <h1>Books beyond your imagination</h1>
+    <p class="text-center">Check out all the books you can borrow</p>
+  </div>
 
-  <ul>
+  <div class="cards">
     <% @books.each do |book| %>
-
-      <%# <%= cl_image_tag("qweih1fw09scnlkffizb", width: 400, height: 300, crop: :fill) %>
-      <%= cl_image_tag book.photo.key, height: 300, width: 400, crop: :fill%>
-      <li><%= book.title %></li>
-      <li><%= book.author %></li>
-      <li><%= book.delivery_price %></li>
-      <%= link_to 'See More', book_path(book) %>
+      <div class="card-trip">
+        <div class="card-grid">
+          <%= cl_image_tag book.photo.key, class:"w-100", crop: :fill%>
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= book.title %></h2>
+              <p><%= book.author %></p>
+              <p class="mb-3"><%= book.category %></p>
+              <%= link_to 'See More', book_path(book), class:"btn btn-small" %>
+            </div>
+            <p class="price"><%= book.delivery_price %>€</p>
+          </div>
+        </div>
+      </div>
     <% end %>
-  </ul>
+  </div>
 </div>

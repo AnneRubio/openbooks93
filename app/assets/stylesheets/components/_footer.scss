@@ -1,12 +1,12 @@
 .footer {
-  background: #F4F4F4;
+  background:white;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 100px;
   padding: 0px 50px;
   color: rgba(0,0,0,0.3);
-  border-top: solid 0.5px #355c7d;
+  // border-top: solid 0.5px #355c7d;
   opacity: 0.4;
 }
 .footer-links {
@@ -22,8 +22,13 @@
 }
 .footer-links a:hover {
   opacity: 1;
+  color: #c06c84;
 }
 .footer .fa-heart {
   color: #D23333;
 }
 
+.foot-centered {
+  width: max-content;
+  margin: 0px auto;
+}

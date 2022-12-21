@@ -9,7 +9,7 @@ class BooksController < ApplicationController
   end
 
   def create
-    # @new_book = Book.new
+    @new_book = Book.new
     @book = Book.new(book_params)
     @book.user = current_user
 

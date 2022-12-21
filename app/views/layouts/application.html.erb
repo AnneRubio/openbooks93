@@ -13,12 +13,8 @@
   <body>
     <%# adding navbar on all pages %>
     <%= render 'shared/navbar' %>
-    <%# adding devise flash messages %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <div class="wrapper">
       <%= yield %>
-    </div>
+    <%= render 'shared/flashes' %>
     <%= render 'shared/footer' %>
   </body>
 </html>
