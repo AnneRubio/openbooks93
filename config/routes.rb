@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'reservations/new'
-  get 'reservations/create'
-  get 'reservations/show'
+  # get 'reservations/new'
+  # get 'reservations/create'
+  # get 'reservations/show'
   # created automatically with Devise
   devise_for :users
   # Defines the root path route ("/")

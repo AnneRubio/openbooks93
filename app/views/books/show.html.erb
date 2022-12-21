@@ -3,7 +3,7 @@
 
 <h2><%= @book.title %></h2>
 <h2><%= @book.author %></h2>
+<h2><%= @book.category %></h2>
 <h2><%= @book.description %></h2>
 <h2><%= @book.delivery_price %></h2>
 <%= cl_image_tag @book.photo.key, height: 300, width: 400, crop: :fill%>
-

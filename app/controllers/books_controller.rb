@@ -9,9 +9,15 @@ class BooksController < ApplicationController
   end
 
   def create
+    # @new_book = Book.new
     @book = Book.new(book_params)
-    @book.save
-    redirect_to book_path(@book)
+    @book.user = current_user
+
+    if @book.save
+      redirect_to book_path(@book)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def show
