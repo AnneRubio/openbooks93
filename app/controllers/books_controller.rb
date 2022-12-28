@@ -9,12 +9,11 @@ class BooksController < ApplicationController
   end
 
   def create
-    @new_book = Book.new
+    # @new_book = Book.new
     @book = Book.new(book_params)
-    @book.user = current_user
-
+    @book.user = current_user # associate the book with user logged in (Devise)
     if @book.save
-      redirect_to book_path(@book)
+      redirect_to books_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -22,6 +21,7 @@ class BooksController < ApplicationController
 
   def show
     @book = Book.find(params[:id])
+    @reservation = Reservation.new # reservation is nested to book
   end
 end
 

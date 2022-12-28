@@ -1,2 +1,28 @@
 <h1>Reservations#new</h1>
 <p>Find me in app/views/reservations/new.html.erb</p>
+<h2><%= @book.title %></h2>
+<p><%= @book.author %></p>
+  <div class='form-new'>
+    <div class="row">
+      <%= simple_form_for[@book, @reservation],
+          html: {
+            data: {
+              controller: 'flatpickr'
+            }
+          } do |f| %>
+          <div class="col">
+            <%= f.input :starting_date, as: :string,
+                        wrapper_html: { class: "mb-4" },
+                        label_html: { class: "form-label text-secondary fw-bold" },
+                        input_html: { data: { controller: "flatpickr" } } %>
+          </div>
+          <div class="col">
+            <%= f.input :end_date, as: :string,
+                        wrapper_html: { class: "mb-4" },
+                        label_html: { class: "form-label text-secondary fw-bold" },
+                        input_html: { data: { controller: "flatpickr" } } %>
+            <%= f.submit "Post it", class:'mt-3 btn btn-ghost'%>
+        </div>
+      <% end %>
+  </div>
+</div>
