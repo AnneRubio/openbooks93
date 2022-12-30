@@ -29,6 +29,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  justify-items: center;
   margin: 1rem;
   padding: 1rem;
 }
@@ -36,6 +37,11 @@
 .cards .bloc-img img {
   border-radius: 50px;
 }
+
+.cards .bloc-img {
+  margin: 0 auto;
+}
+
 
 .cards .bloc {
   width: 200px;

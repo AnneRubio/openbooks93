@@ -16,7 +16,7 @@
       <div class="grey-bloc">
         <p><%= @book.description %></p>
         <p>delivery_price: <%= @book.delivery_price %>€</p>
-        <%= link_to 'Book it', new_book_path, class:"btn btn-small" %>
+        <%= link_to 'Book it', new_book_reservation_path(@book), class:"btn btn-small" %>
       </div>
     </div>
   </div>

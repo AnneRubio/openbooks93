@@ -7,8 +7,12 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome";
 @import "flatpickr/dist/flatpickr";
-@import "flatpickr/dist/themes/airbnb";
 
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+.wrapper {
+  min-height: calc(100vh - 50px - 100px);
+  margin-top: 0px;
+}

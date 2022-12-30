@@ -21,7 +21,7 @@ class BooksController < ApplicationController
 
   def show
     @book = Book.find(params[:id])
-    @reservation = Reservation.new # reservation is nested to book
+    # @reservation = Reservation.new --> displays the reservation on the Show of book as it is nested to book
   end
 end
 
