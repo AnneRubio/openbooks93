@@ -1,0 +1,20 @@
+// centering the login form vertically
+.wrapper {
+  display: flex;
+  align-items: center;
+}
+/* styling the login form */
+.main-login {
+  max-width: 500px;
+  background-color: white;
+  margin: 4rem auto;
+  padding: 2rem;
+  border-radius: 9px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+.main-login a {
+  text-decoration: none;
+}
+.login-title {
+  padding-bottom: 2rem;
+}
