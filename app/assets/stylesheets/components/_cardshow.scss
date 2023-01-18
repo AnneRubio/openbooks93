@@ -1,5 +1,38 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  grid-gap: 2rem;
+  margin: 2rem;
+}
+
 .grey-bloc {
-  background-color: lightgrey;
+  background-color:white;
   padding: 37px;
   border-radius: 5px;
+}
+
+.book-desc {
+  font-size: 1.25rem;
+}
+
+.price-desc {
+  font-size: 1rem;
+  color: #355C7D;
+  text-transform: uppercase;
+}
+
+#new_reservation {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 4px;
+}
+
+.show-title {
+  font-size: 5rem;
+}
+
+.img-show {
+  height:400px;
+  object-fit: contain;
 }

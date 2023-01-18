@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+before_action :set_book, only: [:show, :edit, :update, :destroy]
 
   def index
     @books = Book.all
@@ -20,8 +21,23 @@ class BooksController < ApplicationController
   end
 
   def show
-    @book = Book.find(params[:id])
-    # @reservation = Reservation.new --> displays the reservation on the Show of book as it is nested to book
+    # @book = Book.find(params[:id])
+    @reservation = Reservation.new # associate the reservation with the book to allow display it on the view
+  end
+
+  def edit
+    # @book = Book.find(params[:id])
+  end
+
+  def update
+    # @book = Book.find(params[:id])
+    @book.update(params[:book])
+    redirect_to book_path(@book)
+  end
+
+  def destroy
+    # @book = Book.find(params[:id])
+    redirect_to books_path, status: :see_other
   end
 end
 
@@ -29,4 +45,8 @@ private
 
 def book_params
   params.require(:book).permit(:title, :author, :description, :category, :delivery_price, :availability, :photo)
+end
+
+def set_book
+  @book = Book.find(params[:id])
 end
