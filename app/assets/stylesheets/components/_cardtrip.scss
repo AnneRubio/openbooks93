@@ -1,3 +1,5 @@
+/* styling the components from index page */
+
 .container .cards {
   grid-template-columns: 1fr 1fr 1fr;
   display: grid;
@@ -47,4 +49,29 @@
   position: absolute;
   left: 20rem;
   top: 1.5rem;
+}
+
+.search {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.edit-delete {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  color: lightgray;
+  font-weight: 400;
+}
+
+.edit-delete a {
+  text-decoration: none;
+  color: #355C7D;;
+  padding-bottom: 1rem;
+}
+
+.edit-delete a:hover {
+  color: pink;
+  font-weight: 800;
 }

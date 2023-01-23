@@ -4,9 +4,9 @@
     <figure class="img-show">
       <%= cl_image_tag @book.photo.key, class:"w-100", crop: :fill%>
     </figure>
-    <div>
+    <div class='book-info'>
       <h3><%= @book.title %></h3>
-      <p><%= @book.author %></p>
+      <span><%= @book.author %></span>
       <p><%= @book.category %></p>
       <div class="grey-bloc">
         <p class="book-desc"><%= @book.description %></p>
@@ -14,21 +14,20 @@
         <%# <%= link_to 'Book it', new_book_reservation_path(@book), class:"btn btn-small" %>
       </div>
     </div>
-  </div>
-  <%# adding the reservation form on the books show view %>
-
-  <div class="grid-container">
-    <h2>Book it Now 📓</h2>
-    <%= simple_form_for [@book, @reservation], html: { data: { controller: 'flatpickr'} } do |f| %>
-        <%= f.input :starting_date,
-                    label: "Book from (dd/mm/yyyy)",
-                    as: :string,
-                    input_html: { data: { flatpickr_target: 'startDateInput' } } %>
-        <%= f.input :ending_date,
-                    label: "Until (dd/mm/yyyy)",
-                    as: :string,
-                    input_html: { data: { flatpickr_target: 'endDateInput'} } %>
-        <%= f.button :submit, "Book it", class:"btn btn-small" %>
-      <% end %>
+    <%# adding the reservation form on the books show view %>
+    <div class="resa-form">
+      <%= simple_form_for [@book, @reservation], html: { data: { controller: 'flatpickr'} } do |f| %>
+          <h2 class='book-title'>Book it Now 📓</h2>
+          <%= f.input :starting_date,
+                      label: "Book from (dd/mm/yyyy)",
+                      as: :string,
+                      input_html: { data: { flatpickr_target: 'startDateInput' } } %>
+          <%= f.input :ending_date,
+                      label: "Until (dd/mm/yyyy)",
+                      as: :string,
+                      input_html: { data: { flatpickr_target: 'endDateInput'} } %>
+          <%= f.button :submit, "Book it", class:"btn btn-small" %>
+        <% end %>
+    </div>
   </div>
 </div>

@@ -3,6 +3,13 @@ before_action :set_book, only: [:show, :edit, :update, :destroy]
 
   def index
     @books = Book.all
+    # creating a method with Active Record for the search bar on the index
+    if params[:query].present?
+      sql_query = "title ILIKE :query OR author ILIKE :query OR category ILIKE :query"
+      @books = Book.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @books = Book.all
+    end
   end
 
   def new

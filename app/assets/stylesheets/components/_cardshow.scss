@@ -1,3 +1,5 @@
+/* styling the components from show page */
+
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -20,6 +22,7 @@
   font-size: 1rem;
   color: #355C7D;
   text-transform: uppercase;
+  font-weight: bold;
 }
 
 #new_reservation {
@@ -33,6 +36,25 @@
 }
 
 .img-show {
-  height:400px;
-  object-fit: contain;
+  height:400x;
+  grid-row: 1/3;
+}
+
+.book-title {
+  font-size: 2rem;
+  padding-bottom: 1rem;
+}
+
+.resa-form {
+  grid-column: 2/3;
+}
+
+.book-info h3 {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.book-info span {
+  font-size: 1.25rem;
+  font-weight: 800;
 }
