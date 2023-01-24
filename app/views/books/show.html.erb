@@ -1,9 +1,20 @@
 <div class="container">
-  <h1>Wanna read: <em><%= @book.title %></em></h1>
+  <h1>Wanna read: '<em><%= @book.title %></em> '</h1>
   <div class="grid-container">
     <figure class="img-show">
       <%= cl_image_tag @book.photo.key, class:"w-100", crop: :fill%>
+      <div class='edit-delete'>
+        <%# I have not included the gem pundit so adding a condition to display the edit and delete buttons only to the owner of the book %>
+        <% if @book.user == current_user %>
+          <%= link_to 'Edit Book', edit_book_path(@book) %>
+          <%= link_to 'Delete Book', books_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+        <% end %>
+      </div>
     </figure>
+    <div class="book-geo">
+      <%= @book.user.username %>
+      <%= @book.user.city %>
+    </div>
     <div class='book-info'>
       <h3><%= @book.title %></h3>
       <span><%= @book.author %></span>

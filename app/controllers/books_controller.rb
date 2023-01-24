@@ -3,7 +3,7 @@ before_action :set_book, only: [:show, :edit, :update, :destroy]
 
   def index
     @books = Book.all
-    # creating a method with Active Record for the search bar on the index
+    # creating a method with Active Record for the search bar on the index:
     if params[:query].present?
       sql_query = "title ILIKE :query OR author ILIKE :query OR category ILIKE :query"
       @books = Book.where(sql_query, query: "%#{params[:query]}%")
@@ -17,7 +17,7 @@ before_action :set_book, only: [:show, :edit, :update, :destroy]
   end
 
   def create
-    # @new_book = Book.new
+    # @new_book = Book.new # line commented cf refactored code
     @book = Book.new(book_params)
     @book.user = current_user # associate the book with user logged in (Devise)
     if @book.save
@@ -28,32 +28,35 @@ before_action :set_book, only: [:show, :edit, :update, :destroy]
   end
 
   def show
-    # @book = Book.find(params[:id])
-    @reservation = Reservation.new # associate the reservation with the book to allow display it on the view
+    # @book = Book.find(params[:id]) # line commented cf refactored code
+    @reservation = Reservation.new # associate the reservation with the book to allow display it on the book view
   end
 
   def edit
-    # @book = Book.find(params[:id])
+    # @book = Book.find(params[:id]) # line commented cf refactored code
   end
 
   def update
-    # @book = Book.find(params[:id])
-    @book.update(params[:book])
-    redirect_to book_path(@book)
+    # @book = Book.find(params[:id]) # line commented cf refactored code
+    if @book.update(book_params)
+      redirect_to book_path(@book)
+    end
   end
 
   def destroy
-    # @book = Book.find(params[:id])
-    redirect_to books_path, status: :see_other
+    # @book = Book.find(params[:id]) # line commented cf refactored code
+    if @book.destroy
+      redirect_to books_path, status: :see_other
+    end
   end
 end
 
 private
 
-def book_params
-  params.require(:book).permit(:title, :author, :description, :category, :delivery_price, :availability, :photo)
-end
-
 def set_book
   @book = Book.find(params[:id])
+end
+
+def book_params
+  params.require(:book).permit(:title, :author, :description, :category, :delivery_price, :availability, :photo)
 end

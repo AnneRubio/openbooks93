@@ -3,7 +3,7 @@
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  align-items: center;
+  align-items: flex-start;
   grid-gap: 2rem;
   margin: 2rem;
 }
@@ -36,10 +36,17 @@
 }
 
 .img-show {
-  height:400x;
-  grid-row: 1/3;
+  grid-row: 1/2;
 }
 
+.img-show img {
+  height: 40vh;
+  object-fit: contain;
+}
+
+.book-geo {
+  grid-row: 2/3;
+}
 .book-title {
   font-size: 2rem;
   padding-bottom: 1rem;
@@ -56,5 +63,26 @@
 
 .book-info span {
   font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.edit-delete {
+  display: flex;
+  justify-content: space-evenly;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-top: 1rem;
+  color: lightgray;
+  font-weight: 400;
+}
+
+.edit-delete a {
+  text-decoration: none;
+  color: #355C7D;;
+  padding-bottom: 1rem;
+}
+
+.edit-delete a:hover {
+  color: pink;
   font-weight: 800;
 }

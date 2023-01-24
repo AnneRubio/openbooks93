@@ -1,7 +1,11 @@
 <div class="container">
   <div>
     <h1>Read Unlimited</h1>
-    <p class="text-center">Check out all the books you can borrow</p>
+    <p class="text-center">Your shelves are not big enough to contain your love for books?
+      <br>OpenBooks is your place for unlimited reads.
+      <br>Check out all the books you can borrow from the openBooks readers' community.
+      <br>You can also share your favorite reads by adding your books to the library.
+    </p>
   </div>
   <div class="search">
     <%= form_with url: books_path, method: :get, class: "d-flex" do %>
@@ -28,10 +32,6 @@
             </div>
             <p class="price"><%= book.delivery_price %>€</p>
           </div>
-        </div>
-        <div class='edit-delete'>
-          <%= link_to 'Edit Book', edit_book_path(book) %>
-          <%= link_to 'Delete Book', books_path %>
         </div>
       </div>
     <% end %>
