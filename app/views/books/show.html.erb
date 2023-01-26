@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>Wanna read: '<em><%= @book.title %></em> '</h1>
+  <h1 class="show-header">Wanna read: '<em><%= @book.title %></em> '</h1>
   <div class="grid-container">
     <figure class="img-show">
       <%= cl_image_tag @book.photo.key, class:"w-100", crop: :fill%>
@@ -12,8 +12,8 @@
       </div>
     </figure>
     <div class="book-geo">
-      <%= @book.user.username %>
-      <%= @book.user.city %>
+      <p><strong><%= @book.user.username %></strong> <br> from <strong><%= @book.user.city %></strong> <br> is happy to share this read</p>
+      <p><i class="fa-solid fa-lines-leaning"></i></p>
     </div>
     <div class='book-info'>
       <h3><%= @book.title %></h3>

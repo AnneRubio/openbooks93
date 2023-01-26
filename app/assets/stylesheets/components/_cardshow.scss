@@ -8,6 +8,10 @@
   margin: 2rem;
 }
 
+.show-header {
+  margin-bottom: 4rem;
+}
+
 .grey-bloc {
   background-color:white;
   padding: 37px;
@@ -46,7 +50,19 @@
 
 .book-geo {
   grid-row: 2/3;
+  text-align: center;
 }
+.book-geo p {
+  font-size: 1.5rem;
+  color: #355C7D;
+  text-transform: uppercase;
+  margin-top: 2rem;
+}
+.book-geo i {
+  font-size: 8rem;
+  color: #355C7D;
+}
+
 .book-title {
   font-size: 2rem;
   padding-bottom: 1rem;

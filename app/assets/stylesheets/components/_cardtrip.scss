@@ -31,7 +31,7 @@
 }
 
 .card-trip p {
-  font-size: 1rem;
+  font-size: 1.15rem;
   color: black;
   margin: 0;
 }
@@ -54,5 +54,10 @@
 .search {
   width: 50%;
   margin: 0 auto;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
+.index-header {
+  margin-bottom: 1rem;
+}
